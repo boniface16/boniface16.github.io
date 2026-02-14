@@ -1,75 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>For Swizell 💖</title>
+<meta charset="UTF-8">
+<title>For My Beloved Swizell 💖</title>
 <style>
+/* Basic body styling */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Georgia', serif;
   background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  overflow-x: hidden;
+  color: #fff;
   text-align: center;
-  color: white;
 }
 
+/* Container for content */
 .container {
   padding: 80px 20px;
 }
 
+/* Heading */
 h1 {
-  font-size: 45px;
+  font-size: 50px;
+  animation: fadeIn 2s ease-in-out;
 }
 
+/* Button styling */
 button {
-  padding: 15px 30px;
-  font-size: 18px;
+  padding: 15px 35px;
+  font-size: 20px;
   border-radius: 25px;
   border: none;
   background-color: white;
-  color: #e75480;
+  color: #ff4e78;
   cursor: pointer;
+  transition: transform 0.3s;
 }
 
+button:hover {
+  transform: scale(1.1);
+}
+
+/* Heart animation */
+.heart {
+  position: absolute;
+  font-size: 24px;
+  animation: float 6s linear infinite;
+}
+
+/* Messages */
 .message {
   display: none;
   margin-top: 40px;
   font-size: 22px;
   line-height: 1.8;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { transform: translateY(-1000px) rotate(360deg); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Footer */
+footer {
+  margin-top: 50px;
+  font-size: 20px;
+  font-style: italic;
+  color: #fff;
 }
 </style>
 </head>
-
 <body>
 
+<!-- Background hearts -->
+<script>
+function createHearts() {
+  for (let i = 0; i < 50; i++) {
+    let heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    heart.style.fontSize = 20 + Math.random()*30 + 'px';
+    heart.style.animationDuration = 4 + Math.random()*6 + 's';
+    heart.innerHTML = '❤️';
+    document.body.appendChild(heart);
+  }
+}
+createHearts();
+</script>
+
 <div class="container">
-  <h1>To My Beautiful Wife 💕</h1>
-  <p>Swizell Ima Carvalho</p>
-  <p>Click below for something from my heart...</p>
-  <button onclick="reveal()">Open My Love 💌</button>
+  <h1>To My Beautiful Wife, Swizell ❤️</h1>
+  <p>Click the button below for your Valentine’s surprise straight from my heart...</p>
+
+  <button onclick="revealLove()">Open My Heart 💌</button>
 
   <div id="loveMessage" class="message">
     <p>My dearest Swizell,</p>
+    <p>From our very first kiss to our wedding day on <strong>10/12/2022</strong>, you have been my everything.</p>
+    <p>You are simple, loving, caring, and the most beautiful part of my life.</p>
+    <p>Every moment with you is a treasure. Every laugh, every hug, every shared glance reminds me that I am truly blessed.</p>
+    <p>I love how your smile lights up my world and your heart inspires me to be better every day.</p>
+    <p>On this Valentine’s Day, I want you to know: You are my forever, my soulmate, my best friend, and my heart’s home.</p>
+    <p>Thank you for being YOU — for loving me, for trusting me, and for sharing this beautiful journey with me.</p>
+    <p>Happy Valentine’s Day, my queen. ❤️</p>
 
-    <p>From our very first kiss to our wedding day on <strong>10/12/2022</strong>,</p>
-    <p>you have been my greatest blessing.</p>
-
-    <p>You are simple. You are loving. You are caring.</p>
-    <p>And you are the most beautiful part of my life.</p>
-
-    <p>Every day with you feels like our wedding day all over again.</p>
-    <p>Every time I look at you, I remember why I chose you…</p>
-    <p>And I would choose you again. And again. And again.</p>
-
-    <p>Happy Valentine’s Day, my love ❤️</p>
-
-    <p>Forever yours,</p>
-    <p><strong>Boniface</strong></p>
+    <footer>Forever yours, <br> <strong>Boniface John Rodrigues</strong></footer>
   </div>
 </div>
 
+<!-- Add gentle background music -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/17/audio_f849d173c6.mp3?filename=romantic-piano-10855.mp3" type="audio/mpeg">
+</audio>
+
 <script>
-function reveal() {
-  document.getElementById("loveMessage").style.display = "block";
+function revealLove() {
+  let msg = document.getElementById('loveMessage');
+  msg.style.display = 'block';
 }
 </script>
 
